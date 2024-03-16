@@ -128,13 +128,14 @@ function power(base, exponent) {
 
 // bubbling and capturing face ---- bubble sort----polyfills
 
-// how faltten an array suing recursion
+// how faltten an array suing recursion 
 
 
 const arr = []
 const getFaltten = (array) =>  array.map((ele) => Array.isArray(ele) ?  [...getFaltten(ele)] : arr.push(ele)); 
 console.log(getFaltten([1,2,[3,[4,5],6],9]));
 console.log(arr);
+
 
 
 

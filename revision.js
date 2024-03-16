@@ -64,3 +64,24 @@ function getCounter () {
 Array.prototype.getCounter = getCounter;
 const count = dummy.getCounter();
 console.log(count, 'count');
+
+
+// write a function to elaborate factorail
+
+const getFactorail = (num) => num === 1 || num === 0 ? 1 : num * getFactorail(num-1);
+
+const fact = getFactorail(3)
+console.log(fact, 'factfact')
+
+//Write a recursive function that takes a string as input and returns the string reversed.
+
+const getReverse = (str) => {
+    if(str.length === 1) {
+        return str[0];
+    } else {
+        return str[str.length - 1] + getReverse(str.slice(-1))
+    }
+}
+
+const reverseStr = getReverse('mukul');
+console.log(reverseStr, 'reverseStr')
