@@ -16,7 +16,7 @@ function x() {
 }
 
 // Call the function 'x', initiating the execution.
-x();
+//x();
 
 // In this example, the key concept is closure. The setTimeout function captures the value of 'a' and
 // bundles it with the callback function. So, 'this will print 1st' will be logged first, and
@@ -30,13 +30,14 @@ x();
 // The original function uses 'var' for 'i', resulting in unexpected output.
 function y() {
     for (var i = 0; i <= 5; i++) {
+        console.log(i, 'i');
         setTimeout(() => {
             console.log(i);
         }, 1000 * i);
     }
 }
 
-y(); 
+//y(); 
 
 // The output will be 6, 6, 6, 6, 6, 6. This happens because 'var' has function scope, and all
 // the setTimeouts capture a reference to the same variable 'i', which has the final value of 6.
@@ -46,13 +47,14 @@ y();
 
 function z() {
     for (let i = 0; i <= 5; i++) {
+        console.log(i, 'i');
         setTimeout(() => {
             console.log(i);
         }, 1000 * i);
     }
 }
 
-z(); 
+// z(); 
 
 // This will work as expected and print numbers from 1 to 6 at 1-second intervals.
 
@@ -66,10 +68,11 @@ function w() {
                 console.log(a);
             }, 1000 * a);
         }
+        console.log(i, 'i')
         close(i);
     }
 }
 
-w();
+ w();
 
 // This will also print numbers from 1 to 6 at 1-second intervals while using 'var' for 'i'.

@@ -25,6 +25,11 @@ console.log(isTown, 'isTown');
 const arr1 = new Array;
 console.log(arr1.length, 'print 0 because new Array will create empty array');
 
+const arr2 = new Array(2);
+console.log(arr2, 'print [empty,empty]');
+arr2.fill(9)
+console.log(arr2, 'print [9,9]');
+
 const Obj2 = new Object;
 console.log(Obj2, 'print {}');
 
