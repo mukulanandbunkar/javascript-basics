@@ -1,13 +1,103 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>mukul</title>
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
 
-<head>
+  <body class="wrapper">
+    <h1>this is js</h1>
+    <h4>Radio</h4>
+    <form>
+      <label for="html">Html</label>
+      <input id="html" type="radio" name="tech" />
+      <label for="ss">CSS</label>
+      <input id="ss" type="radio" name="tech" />
+      <label for="js">JS</label>
+      <input id="js" type="radio" name="tech" />
+    </form>
+    <h4>Checkbox</h4>
+    <form>
+      <label for="html">Html</label>
+      <input id="html" type="checkbox" name="tech" />
+      <label for="ss">CSS</label>
+      <input id="ss" type="checkbox" name="tech" />
+      <label for="js">JS</label>
+      <input id="js" type="checkbox" name="tech" />
+    </form>
+    <h4>Text</h4>
+    <form>
+      <label for="text">text</label>
+      <input id="text" value="this" type="text" name="text" />
+    </form>
+    <form>
+      <label for="color">Color</label>
+      <input id="color"  value="23/12/2024" type="color" name="text" />
+    </form>
+    <form>
+        <form>
+            <label for="date">date</label>
+            <input id="date" value="#000" type="date" name="text" />
+          </form>
+          <form>
+      <label for="text">text</label>
+      <textarea id="text" name="text"></textarea>
+    </form>
+    <form>
+      <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </form>
+    <form>
+      <input list="num" />
+      <datalist id="num">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </datalist>
+    </form>
 
-</head>
-
-<body>
-    <h1>This is my JS</h1>
-    <script src="./passBy.js"></script>
-</body>
-
+    <h3>Table</h3>
+    <table border="1">
+      <thead>
+        <td>Name</td>
+        <td>11-12</td>
+        <td>12-1</td>
+        <td>1-2</td>
+        <td>2-4</td>
+      </thead>
+      <tr>
+        <td>mukul</td>
+        <td rowspan="2" colspan="2">office</td>
+        <td >lunch</td>
+        <td >relax</td>
+      </tr>
+      <tr>
+        <td>vedansh</td>
+        <td >office</td>
+        <td colspan="2" >lunch</td>
+        <td >relax</td>
+      </tr>
+    </table>
+    <div>this is my div</div>
+    <p>this is my para tag</p>
+    <span>this is my span tag</span>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <div draggable="true" ondrag="OnDragDiv(event)">on drag div</div>
+    <script src="./ayncAwait.js"></script>
+  </body>
 </html>

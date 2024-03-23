@@ -48,17 +48,18 @@ const sampleArr = [1,2,4,5,3,2,4,5,6,67,7,5,43436,665,47,2,43,645,434,3,64,56,3,
 const indexOfRes = sampleArr.getIndexOf(9999);
 console.log(indexOfRes ,'indexOfRes');
 
-// roatate the array upto k times
+//roatate the array upto k times
 
-// const arr = [1,2,3,4,5]
+const arr = [1,2,3,4,5]
 
-// const rotateArr = (array, k) => {
-//     const 
-//     do {
-
-//         k--;
-//     } while(k === 0)
-// }
+const rotateArr = (array, k) => {
+    const Arr = array;
+    for (let index = 0; index < k; index++) {
+       let temp = Arr.pop();
+       Arr.unshift(temp)       
+    }
+    return Arr
+}
 
 
 

@@ -3,7 +3,7 @@
 // In JavaScript, a variable is said to be "undefined" if it has been declared,
 // but it doesn't yet have a value assigned to it. It occupies a memory space in the current
 // execution context, but the value is not set.
-console.log(zzz); // Prints undefined due to hoisting; memory allocation happens for b.
+console.log(b); // Prints undefined due to hoisting; memory allocation happens for b.
 
 var a; // Declaration of variable a.
 var b = 10; // Declaration and initialization of variable b.

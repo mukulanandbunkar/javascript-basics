@@ -18,6 +18,16 @@ x(() => {
 })
 
 
+// setTimeout(() => {
+//     console.log('this is timInterval')
+//   }, 5000)
+  
+  function v () {
+    console.log('this is my function')
+  }
+  
+  v();
+
 // output
 // x
 // y

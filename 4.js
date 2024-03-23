@@ -20,6 +20,7 @@ function a() {
   }
 }
 
+
 // Declare the variable b.
 var b;
 

@@ -85,3 +85,23 @@ const getReverse = (str) => {
 
 const reverseStr = getReverse('mukul');
 console.log(reverseStr, 'reverseStr')
+
+
+const val =2000
+const a = () =>  {
+    const x =888
+    console.log(val, 'val inside a()')
+    const b  = () => {
+        console.log(x, val, 'value of x and val inside b()')
+    }
+   return b;
+}
+
+const returnFunc = a();
+
+returnFunc();
+
+
+// polu
+
+
