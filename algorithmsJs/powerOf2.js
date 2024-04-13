@@ -14,5 +14,8 @@ const isPowerOf2 = (num) => {
 
 console.log(isPowerOf2(1))
 
+const isPowerOf = (num, power) => num % power === 0 ? isPowerOf(num/power, power) : num === 1
 
+
+console.log(isPowerOf(64, 4));
   

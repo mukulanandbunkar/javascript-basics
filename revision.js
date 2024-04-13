@@ -162,3 +162,135 @@ Array.prototype.getReduce = getReduce;
 
 const finalRes = [1, 2, 3, 4].getReduce((acc, ele) => acc + ele);
 console.log(finalRes, "finalRes");
+
+const sortArr = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        const save = arr[i];
+        arr[i] = arr[j];
+        arr[j] = save;
+      }
+    }
+  }
+  return arr;
+};
+
+console.log(
+  "sorted ARRay is",
+  sortArr([2, 7, 5, 3, 6, 8, 5, 4, 6, 54, 6, 8, 43])
+);
+
+const reverseSting = (str) =>
+  str ? str.slice(-1) + reverseSting(str.substring(0, str.length - 1)) : "";
+
+class Employee {
+  constructor(name, empId) {
+    this.name = name;
+    this.empId = empId;
+  }
+  getVal = function () {
+    return `${this.name} ---> ${this.empId}`;
+  };
+}
+
+const emp1 = new Employee("mukul", "ENT287");
+console.log(emp1.getVal());
+const emp2 = new Employee("vedansh", "MIND244");
+
+console.log(emp2.getVal());
+
+const fn6 = (state) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state) return resolve(5454654);
+      else return reject(404);
+    }, 2000);
+  });
+
+const fn7 = (state) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state) return resolve(3243432);
+      else return reject(403);
+    }, 2000);
+  });
+
+const fn8 = (state) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state) return resolve(54545475757654);
+      else return reject(402);
+    }, 2000);
+  });
+
+// fn6(true).then((res) => {
+//   console.log(res);
+//   fn7(true).then ((res) => {
+//     console.log(res);
+//     fn8(true).then((res) => {
+//       console.log(res);
+//     })
+//   })
+// })
+
+// fn6(true)
+//   .then((res) => {
+//     console.log(res);
+//     return fn7(false);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .then((res) => {
+//     console.log(res);
+//     return fn8(true);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+const promise = async () => {
+  try {
+    const res1 = await fn6(true);
+    console.log(res1);
+    const res2 = await fn7(false);
+    console.log(res2);
+    const res3 = await fn8(true);
+    console.log(res3);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+promise();
+const fab = (num) => [1, 0].includes(num) ? num : fab(num-1) + fab(num-2);
+
+
+const getFlatten = (arr) => {
+  const output = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])){
+      getFlatten(arr[i])
+    } else {
+      output.push(arr[i])
+    }   
+  }
+  return arr;
+}
+
+
+const print1to10 = () => {
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+      console.log(i);
+    }, 1000*i)
+    
+  }
+}

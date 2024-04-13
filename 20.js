@@ -4,6 +4,14 @@ const  scrollContainer = document.getElementById('scroll-container');
 const percentScroll = document.getElementById('percent-scroll');
 const scrollIndicator = document.getElementById('scroll-indicator');
 
+/**
+ * Scroll height
+ * scroll height is the total height the screen height + the height which we can scroll
+ * clientHeight
+ * it is the height if the client or we can say it is the height of the screen
+ * scroll top 
+ * it is the  height travel by the scroll
+ */
 
 scrollContainer.addEventListener('scroll', (event) => {
    console.log( scrollContainer.scrollHeight, 'scrollHeight');
@@ -15,7 +23,7 @@ scrollContainer.addEventListener('scroll', (event) => {
    percentScroll.innerText = `${Math.round(scrollPercent.toFixed(2))}%`;
    scrollIndicator.style.width = `${Math.round(scrollPercent.toFixed(2))}%`;
 })
-const scrollToTop = () =>  scrollContainer.scrollTo(0,0)
+const scrollToTop = () =>  scrollContainer.scrollTo(0,0) // scrolTo(x, y)
 const scrollToBottom = () =>  scrollContainer.scrollTo(0, scrollContainer.scrollHeight)
 
 

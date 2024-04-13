@@ -37,7 +37,7 @@ console.log(typeof(isNaN))// function
 //isNaN
 console.log(isNaN(NaN)); // true
 console.log(isNaN('zasdasda')); // true
-console.log(isNaN(111111)); // true
+console.log(isNaN(111111)); // false
 
 //isNaN consider boolean as number
 console.log(isNaN(true)); // false
