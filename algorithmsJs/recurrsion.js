@@ -41,10 +41,13 @@ const getNthFabonacci = (num) => {
         return num
     }
     return getNthFabonacci(num-1) +  getNthFabonacci(num-2);
+             
 }
 
 
-console.log(getNthFabonacci(8) )// [0,1,1,2,3,5,8,13,21] --->21
+
+
+console.log(getNthFabonacci(8) ) // [0,1,1,2,3,5,8,13,21] --->21
 
 // getNthFabonacci(7) + getNthFabonacci(6)
 //                                         + getNthFabonacci(5)+ getNthFabonacci(4)
@@ -135,6 +138,8 @@ const arr = []
 const getFaltten = (array) =>  array.map((ele) => Array.isArray(ele) ?  [...getFaltten(ele)] : arr.push(ele)); 
 console.log(getFaltten([1,2,[3,[4,5],6],9]));
 console.log(arr);
+
+
 
 
 

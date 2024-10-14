@@ -24,4 +24,13 @@ const debounceCounter = createDebounce(() => {
 btn.addEventListener("click", () => {
   normalOutput.innerHTML = ++normalCounter;
   debounceCounter();
-})
+});
+
+let user3 = {
+  name: "Piyush",
+  age: 24,
+  getDetails: () => {
+    console.log(this.name);
+  },
+};
+user3.getDetails();

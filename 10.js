@@ -20,19 +20,26 @@ myObject.method(); // Output: myObject
 
 // Constructor Functions:
 // When a function is used as a constructor with the `new` keyword, `this` refers to the newly created object.
-function Person(name) {
+function Person(name, age, marks) {
   this.name = name;
+  this.age = age;
+  // this.marks =10
+}
+ const marks = {
+  marks : 10
+
 }
 
-const john = new Person('John');
-console.log(john.name); // Output: John
+
+const john = new Person("mukul",10,30);
+console.log(john,  Person, "Person"); // Output: John
 
 // Event Handlers:
 // In the context of event handlers, such as those used in DOM manipulation, `this` often refers to the DOM element that triggered the event.
-const button = document.getElementById('myButton');
-button.addEventListener('click', function () {
-  console.log(this); // Output: button
-});
+// const button = document.getElementById('myButton');
+// button.addEventListener('click', function () {
+//   console.log(this); // Output: button
+// });
 
 // Arrow Functions:
 // Arrow functions behave differently when it comes to `this`.

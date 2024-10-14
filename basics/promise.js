@@ -1,7 +1,7 @@
 /**
  * Promise
  * promise is either resolve or reject
- * promise if promise resolve or reject we can handle resilt via two methods
+ * promise if promise resolve or reject we can handle result via two methods
  * 1. aync await
  * 2. then().catch()
  */

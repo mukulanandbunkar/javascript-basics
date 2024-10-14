@@ -13,7 +13,7 @@ var x = 10;
 
 // Define a function named "demo."
 function demo() {
-    var y = 6; // Declare a local variable "y" within the function.
+  var y = 6; // Declare a local variable "y" within the function.
 }
 
 // Attempting to access "y" here would result in a "not defined" error

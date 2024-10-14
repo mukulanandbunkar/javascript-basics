@@ -91,6 +91,7 @@ const print0to4 = () => {
 
 /**
  * below function will print 5 only since var have global scope and it will chnage to 5 globally
+ * since var have a function scope not block scope so within a block it will print only 5
  */
 
 const print5only = () => {
@@ -100,6 +101,20 @@ const print5only = () => {
       }, 1000 * i);
     }
   };
+
+  // how can ypu correct the above 
+  
+  const print1To5UsingVar = () => {
+    const  _1to5 =(i) => {
+      setTimeout(() => {
+        console.log(i);
+      }, i * 1000 )
+    }
+    for (let i = 0; i < 5; i++) {
+      _1to5(i)
+    }
+  
+  }
 
   //print5only();
 

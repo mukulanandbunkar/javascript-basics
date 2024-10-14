@@ -1,5 +1,5 @@
 let var1;
-console.log(typeof(var1)); // undefined
+console.log(typeof(var1)); //undefined
 
 const var2 = null;
 console.log(typeof(var2)); // object

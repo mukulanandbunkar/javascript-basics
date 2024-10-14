@@ -42,7 +42,7 @@ const ObjCopy = Obj
 Obj.state = 'Karnataka'
 delete(Obj.city) // perform delete using delete
 
-console.log(ObjCopy, 'prtins --> {state : "Karnataka"}')
+console.log(ObjCopy, 'prints --> {state : "Karnataka"}')
 
 
 

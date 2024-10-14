@@ -8,7 +8,7 @@
     // This is a compound statement or block of code.
     // It contains multiple statements.
     a = 10; // Assigns the value 10 to the variable 'a'.
-    console.log(10); // Logs the number 10 to the console.
+    console.log(a); // Logs the number 10 to the console.
 }
 
 // Previously, this if statement would throw a syntax error because it expected at least a single statement.

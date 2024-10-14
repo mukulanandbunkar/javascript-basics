@@ -1,48 +1,45 @@
-
-
 const Obj1 = {
-    town: 'jbp',
-    state: 'mp',
-    ip: '122.33.55.44'
-}
+  town: "jbp",
+  state: "mp",
+  ip: "122.33.55.44",
+};
 // delete
 // it is used to delete the key from the object
-console.log(Obj1, 'before delete');
-delete(Obj1.ip);
-console.log(Obj1, 'after delete');
-
+console.log(Obj1, "before delete");
+delete Obj1.ip;
+console.log(Obj1, "after delete");
 
 // in
 // check if object has the given property
 
-const isTown = 'town' in Obj1; // note key-name always is in string
-console.log(isTown, 'isTown');
+const isTown = "town" in Obj1; // note key-name always is in string
+console.log(isTown, "isTown");
 
-// new 
+// new
 
 // it is used to create new obj instance
 
-const arr1 = new Array;
-console.log(arr1.length, 'print 0 because new Array will create empty array');
+const arr1 = new Array();
+console.log(arr1.length, "print 0 because new Array will create empty array");
 
 const arr2 = new Array(2);
-console.log(arr2, 'print [empty,empty]');
-arr2.fill(9)
-console.log(arr2, 'print [9,9]');
+console.log(arr2, "print [empty,empty]");
+arr2.fill(9);
+console.log(arr2, "print [9,9]");
 
-const Obj2 = new Object;
-console.log(Obj2, 'print {}');
+const Obj2 = new Object();
+console.log(Obj2, "print {}");
 
-const date = new Date;
-console.log(date, 'print date in IST');
+const date = new Date();
+console.log(date, "print date in IST");
 
-const boolean = new Boolean;
-console.log(boolean, 'prints Boolean {false}');
+const boolean = new Boolean();
+console.log(boolean, "prints Boolean{false}");
 
-const num = new Number;
-console.log(num, 'prints Number{0}');
+const num = new Number();
+console.log(num, "prints Number{0}");
 
-const str = new String;
+const str = new String();
 console.log(str, 'prints String{""}');
 
 //instanceOF
@@ -50,5 +47,4 @@ console.log(str, 'prints String{""}');
 
 const isObj = Obj1 instanceof Object;
 
-console.log(isObj, 'isObj is a instance of Object its true')
-
+console.log(isObj, "isObj is a instance of Object its true");

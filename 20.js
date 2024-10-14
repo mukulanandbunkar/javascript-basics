@@ -6,14 +6,16 @@ const scrollIndicator = document.getElementById('scroll-indicator');
 
 /**
  * Scroll height
- * scroll height is the total height the screen height + the height which we can scroll
+   * scroll height is the total height the screen height + the height which we can scroll
  * clientHeight
- * it is the height if the client or we can say it is the height of the screen
+   * it is the height if the client or we can say it is the height of the screen
  * scroll top 
- * it is the  height travel by the scroll
+   * it is the  height travel by the scroll
+* scroll to Top
+   * scroll to top is a function which 
  */
 
-scrollContainer.addEventListener('scroll', (event) => {
+scrollContainer.addEventListener('scroll', () => {
    console.log( scrollContainer.scrollHeight, 'scrollHeight');
    console.log( scrollContainer.clientHeight, 'clientHeight');
    console.log( scrollContainer.offsetHeight, 'offsetHeight');

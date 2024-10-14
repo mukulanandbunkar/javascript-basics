@@ -18,7 +18,6 @@ const isPalindrome1 = (number) => {
    } else {
     return false
    }
-
 }
 
 // Approach 2

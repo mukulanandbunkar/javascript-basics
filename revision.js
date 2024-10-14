@@ -270,27 +270,375 @@ const promise = async () => {
 };
 
 promise();
-const fab = (num) => [1, 0].includes(num) ? num : fab(num-1) + fab(num-2);
-
+const fab = (num) => ([1, 0].includes(num) ? num : fab(num - 1) + fab(num - 2));
 
 const getFlatten = (arr) => {
   const output = [];
   for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])){
-      getFlatten(arr[i])
+    if (Array.isArray(arr[i])) {
+      getFlatten(arr[i]);
     } else {
-      output.push(arr[i])
-    }   
+      output.push(arr[i]);
+    }
   }
   return arr;
-}
-
+};
 
 const print1to10 = () => {
   for (let i = 0; i < 5; i++) {
     setTimeout(() => {
       console.log(i);
-    }, 1000*i)
-    
+    }, 1000 * i);
+  }
+};
+
+const obj5 = {
+  first_name: "mukul",
+  last_name: "anand",
+  getFullName: function (company) {
+    return `${this.first_name} ${this.last_name} from ${company}`;
+  },
+};
+
+const obj6 = {
+  first_name: "vedansh",
+  last_name: "tiwari",
+};
+
+const x = { ...obj5 };
+
+x.first_name = "rahul";
+
+const fn9 = obj5.getFullName.bind(obj6, "mindtree");
+
+console.log(x, obj5);
+
+// const scrollcontainer = document.getElementById("scroll-container");
+// const percentScrollIndicator = document.getElementById("percent-scroll");
+// const scrollIndicator = document.getElementById("scroll-indicator");
+
+// scrollcontainer.addEventListener("scroll", (event) => {
+//   const percentScroll =
+//     (scrollcontainer.scrollTop /
+//       (scrollcontainer.scrollHeight - scrollcontainer.clientHeight)) *
+//     100;
+//   const absPercent = Math.floor(percentScroll);
+//   percentScrollIndicator.innerText = `${absPercent}%`;
+//   scrollIndicator.style.width = `${absPercent}%`;
+// });
+
+// const scrollToTop = () => scrollcontainer.scrollTo(0, 0);
+
+// const scrollToBottom = () =>
+//   scrollcontainer.scrollTo(0, scrollcontainer.scrollHeight);
+
+// in the array of next ele greater then return same element otherwose return -1
+
+const nextGreaterEle = (arr) => {
+  const output = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i === arr.length - 1) {
+      output.push(arr[i]);
+    } else if (arr[i] < arr[i + 1]) {
+      output.push(arr[i + 1]);
+    } else {
+      output.push(-1);
+    }
+  }
+  return output;
+};
+
+const res = nextGreaterEle([
+  2, 33, 5, 2, 2, 2, 5, 56, 7, 3, 2, 2, 5, 77, 44, 222, 6678, 222, 666, 3, 222,
+  5, 222, 566, 3, 22,
+]);
+console.log(res);
+
+const getDebounce = (cb, delay) => {
+  let timeout;
+  return () => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => {
+      cb();
+    }, delay);
+  };
+};
+
+const getThrottle = (cb, delay) => {
+  let start = 0;
+  return () => {
+    const end = new Date().getTime();
+    if (end - start <= delay) return;
+    start = end;
+    return cb();
+  };
+};
+
+// console.log(this); // window
+// const thisKeyword = () => {
+//   console.log(this); // window
+//   this.name = name
+// }
+
+// thisKeyword();
+
+// function xzzzz (name) {
+//   this.name = name
+//   console.log(this); // window
+// }
+
+// const newObjName = new xzzzz('mukukul')
+
+// xzzzz();
+
+const studentData = [
+  { id: 1, name: "mukul", marks: "247" },
+  { id: 2, name: "vedansh", marks: "100" },
+  { id: 3, name: "rahul", marks: "372" },
+  { id: 4, name: "ayush", marks: "450" },
+];
+
+// const getOrderRank = (arr) => {
+//   for (let i = 0; i < arr.length; i++) {
+//    for (let j = i+1; j < arr.length; j++) {
+//     if(arr[i].marks < arr[j].marks) {
+//       const temp = arr[i];
+//       arr[i] = arr[j]
+//       arr[j] = temp;
+//     }
+//    }
+//   }
+//   return arr;
+// }
+const getOrderRank = (arr) => arr.sort((a, b) => b.marks - a.marks);
+console.log(getOrderRank(studentData));
+
+const arr4 = [
+  1, 2, 3, 2, 3, 2, 4, 5, 5, 3, 2, 2, 3, 99, 56, 34, 23, 99, 78, 65, 65, 34, 99,
+  5, 6, 3, 2, 3, 5, 2, 53, 5, 2, 9, 8, 6, 4, 9867, 3, 7, 8, 9, 9, 4, 3,
+];
+const getEleList = (arr) => {
+  const obj = {};
+  arr.map((ele) => (obj[ele] = obj[ele] ? ++obj[ele] : 1));
+  return obj;
+};
+console.log(getEleList(arr4));
+const factorial1 = (num) =>
+  [1, 0].includes(num) ? num : num * factorial1(num - 1);
+
+/**
+ * Sum of Array Elements:
+  Write a function that takes an array of numbers as input and returns the sum of all the elements using the reduce method.
+ */
+
+const getSum = (arr) => arr.reduce((acc, curr) => curr + acc, 0);
+
+console.log("Sum of Array Elements:", getSum(arr4));
+
+/**
+ * Product of Array Elements:
+    Write a function that takes an array of numbers as input and returns the product of all the elements using the reduce method.
+ */
+
+const getProduct = (arr) => arr.reduce((acc, curr) => curr * acc, 1);
+
+console.log("Product of Array Elements:", getProduct(arr4));
+
+/**
+     * Flatten an Array:
+        Write a function that takes an array of arrays as input and flattens it into a single array using the reduce method.
+     */
+
+const arr5 = [
+  1,
+  3,
+  4,
+  5,
+  3,
+  2,
+  3,
+  3,
+  4,
+  5,
+  4,
+  3,
+  2,
+  2,
+  [
+    1,
+    2,
+    3,
+    [1, 2, 4, 5, 3, 2, 1, 1],
+    3443,
+    6,
+    7,
+    5,
+    4,
+    [1, 2, 3, 4, 5, 6],
+    1,
+    2,
+    3,
+    4,
+    [1, 2, 4, 5, 6],
+    1,
+    3,
+    4,
+    5,
+    6,
+  ],
+  7,
+  8,
+];
+
+const getFlaten = (arr) =>
+  arr.reduce(
+    (acc, curr) =>
+      Array.isArray(curr) ? acc.concat(getFlaten(curr)) : acc.concat(curr),
+    []
+  );
+console.log(getFlaten(arr5));
+
+/**
+* Find Maximum Number:
+Write a function that takes an array of numbers as input and returns the maximum number using the reduce method.
+*/
+
+const getMaxVal = (arr) =>
+  arr.reduce((acc, curr) => (acc > curr ? acc : curr), arr[0]);
+
+console.log("Find Maximum Number:", getMaxVal(arr4));
+
+/**
+ * Concatenate Strings:
+Write a function that takes an array of strings as input and concatenates them into a single string using the reduce method.
+ */
+
+const strName = ["m", "u", "k", "u", "l"];
+
+const getConcat = (arr) => arr.reduce((acc, curr) => acc + curr, "");
+console.log("Concatenate Strings:", getConcat(strName));
+
+/**
+ * Counting Occurrences:
+    Write a function that takes an array of items and a target item as input, and returns the count of occurrences
+    of the target item in the array using the reduce method.
+ */
+
+const countingOccurance = (arr) =>
+  arr.reduce((acc, curr) => {
+    acc[curr] = acc[curr] ? ++acc[curr] : 1;
+    return acc;
+  }, {});
+
+console.log(countingOccurance(arr4));
+
+/**
+ * Custom Reducer:
+Write a function that takes an array and a custom reducer function as input, 
+and applies the reducer function to the array using the reduce method.
+ */
+
+/**
+ * palindrome using recurrsion
+ */
+
+// const getPalindrome = (str) => {
+//   if (str.length === 1 || str === "") {
+//     console.log(str, 'string');
+//     return true;
+//   }
+//   const firstEle = str[0];
+//   const lastEle = str[str.length - 1];
+//   if (firstEle === lastEle) {
+//     let newStr = "";
+//     for (let i = 1; i < str.length - 1; i++) {
+//       newStr += str[i];
+//     }
+//    return getPalindrome(newStr);
+//   } else {
+//     return false;
+//   }
+// };
+
+// const getPalindrome = (str) =>  + str.toString().split('').reverse().join('') === str;
+
+const getPalindrome = (str) => {
+  if (str.length === 1 || str === "") {
+    return true;
+  }
+  if (str[0] === str.slice(-1)) {
+    return getPalindrome(str.slice(1, -1));
+  }
+
+  return false;
+};
+console.log(getPalindrome("level"));
+const getReverseStr = (str) =>
+  str.length === 1
+    ? str
+    : str.slice(-1) + getReverseStr(str.slice(0, str.length - 1));
+console.log(getReverseStr("mukul"));
+
+const getFacbinacci = (num) =>
+  [0, 1].includes(num) ? num : getFacbinacci(num - 1) + getFacbinacci(num - 2);
+
+function getMap(cb) {
+  const output = [];
+  for (let i = 0; i < this.length; i++) {
+    output.push(cb(this[i], i, this));
   }
 }
+
+function getSlice(start, end) {
+  const output = [];
+  const length = this.length;
+  const initial = start >= 0 ? start : Math.max(0, start + length);
+  const final =
+    typeof end !== undefined
+      ? end >= 0
+        ? Math.min(length, end)
+        : Math.max(0, length + end)
+      : length;
+  for (let i = initial; i < final; i++) {
+    output.push(this[i]);
+  }
+  return output;
+}
+
+function getReduce(cb, acc) {
+  for (let i = 0; i < this.length; i++) {
+    acc = acc === undefined ? this[0] : cb(acc, this[i], i, this);
+  }
+  return acc;
+}
+
+const curry = (fn) => {
+  return function curryfn(...args) {
+    console.log(fn)
+    if(args.length >= fn.length) {
+      return fn(...args)
+    } else {
+      return function (...next) {
+        return curryfn(...args, ...next)
+      }
+    }
+  }
+}
+
+
+
+const memoize = (n) => {
+  for (let i = 0; i < 100000; i++) {
+    if(i===n) {
+      return i
+    } else {
+      return -1
+    }
+  }
+}
+
+console.time("start")
+console.log(memoize(1000));
+console.timeEnd("end")

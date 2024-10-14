@@ -20,4 +20,4 @@ console.log(arr.fill(0));
 
 const str = new String('mukul')
 
-console.log(str, 'str')
+console.log(str, 'str');
